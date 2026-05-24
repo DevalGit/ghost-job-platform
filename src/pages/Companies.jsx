@@ -40,7 +40,7 @@ const COMPANIES = [
     founded: 1998,
     tags: ["Remote Friendly", "Top Payer", "Best Culture"],
     desc: "Google builds products and services that organize the world's information and make it universally accessible and useful.",
-    perks: ["Health Insurance", "Stock Options", "Remote Work", "Learning Budgett"],
+    perks: ["Health Insurance", "Stock Options", "Remote Work", "Learning Budgetsst"],
   },
   {
     id: 2,
