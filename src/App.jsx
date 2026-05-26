@@ -10,6 +10,8 @@ import Jobs from "./pages/Jobs";
 import About from "./pages/AboutPage";
 import Contact from "./pages/ContactUs"
 import CompaniesPage from "./pages/Companies";
+import UserDashboard from "./pages/Dashboard";
+import EmployerDashboard from "./pages/EmployeerDashboard";
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
@@ -55,6 +57,8 @@ export default function App() {
           <Route path="/contact" element={<Contact/>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/Udashboard" element={<UserDashboard />} />
+        <Route path="/Edashboard" element={<EmployerDashboard/>} />
       </Routes>
     </ThemeProvider>
   );

@@ -699,22 +699,7 @@ export default function CompaniesPage() {
           </div>
 
           {/* Industry */}
-          <div style={{ marginBottom: "20px" }}>
-            <div style={{ fontSize: "11px", fontWeight: 700, letterSpacing: "0.8px", textTransform: "uppercase", color: C.gray, marginBottom: "10px" }}>Industry</div>
-            <div style={{ display: "flex", flexDirection: "column", gap: "4px", maxHeight: "220px", overflowY: "auto" }}>
-              {INDUSTRIES.map(ind => (
-                <button key={ind} onClick={() => setIndustry(ind)} style={{
-                  textAlign: "left", padding: "7px 10px", borderRadius: "7px",
-                  border: `1px solid ${industry === ind ? C.blueAcc : "transparent"}`,
-                  background: industry === ind ? C.bluePale : "transparent",
-                  color: industry === ind ? C.blue : C.grayDark,
-                  fontSize: "13px", fontWeight: industry === ind ? 700 : 400,
-                  cursor: "pointer", transition: "all 0.12s",
-                  whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis",
-                }}>{ind}</button>
-              ))}
-            </div>
-          </div>
+     
 
           <div style={{ height: "1px", background: C.border, margin: "16px 0" }} />
 

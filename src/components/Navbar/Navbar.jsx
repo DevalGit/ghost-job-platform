@@ -30,6 +30,8 @@ const navLinks = [
   { label: "Companies", path: "/companies" },
   { label: "About", path: "/About" },
   { label: "Contact", path: "/contact" },
+    { label: "Login", path: "/login" },
+      { label: "Register", path: "/register" },
 ];
 
 export default function Navbar({ darkMode, onToggleTheme, isLoggedIn = true }) {

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import {
   Avatar,
   IconButton,
@@ -8,13 +10,21 @@ import {
   Divider,
   Tooltip,
 } from "@mui/material";
+
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import SettingsIcon from "@mui/icons-material/Settings";
 import LogoutIcon from "@mui/icons-material/Logout";
 
 export default function ProfileMenu() {
   const [anchorEl, setAnchorEl] = useState(null);
+
   const open = Boolean(anchorEl);
+
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <>
@@ -22,13 +32,9 @@ export default function ProfileMenu() {
         <IconButton
           onClick={(e) => setAnchorEl(e.currentTarget)}
           aria-label="open profile menu"
-          aria-controls={open ? "profile-menu" : undefined}
-          aria-haspopup="true"
-          aria-expanded={open ? "true" : undefined}
         >
           <Avatar
             alt="User profile"
-            src=""
             sx={{
               width: 36,
               height: 36,
@@ -42,10 +48,9 @@ export default function ProfileMenu() {
       </Tooltip>
 
       <Menu
-        id="profile-menu"
         anchorEl={anchorEl}
         open={open}
-        onClose={() => setAnchorEl(null)}
+        onClose={handleClose}
         PaperProps={{
           sx: {
             mt: 1,
@@ -55,14 +60,35 @@ export default function ProfileMenu() {
           },
         }}
       >
-        <MenuItem>
+        <MenuItem
+          onClick={() => {
+            navigate("/Udashboard");
+            handleClose();
+          }}
+        >
           <ListItemIcon>
             <DashboardIcon fontSize="small" />
           </ListItemIcon>
           Dashboard
         </MenuItem>
 
-        <MenuItem>
+      <MenuItem
+          onClick={() => {
+            navigate("/Edashboard");
+            handleClose();
+          }}
+        >
+          <ListItemIcon>
+            <DashboardIcon fontSize="small" />
+          </ListItemIcon>
+          Employeer Dashboard
+        </MenuItem>
+        <MenuItem
+          onClick={() => {
+            navigate("/settings");
+            handleClose();
+          }}
+        >
           <ListItemIcon>
             <SettingsIcon fontSize="small" />
           </ListItemIcon>
@@ -71,7 +97,15 @@ export default function ProfileMenu() {
 
         <Divider />
 
-        <MenuItem>
+        <MenuItem
+          onClick={() => {
+            localStorage.removeItem("token");
+
+            navigate("/login");
+
+            handleClose();
+          }}
+        >
           <ListItemIcon>
             <LogoutIcon fontSize="small" />
           </ListItemIcon>
