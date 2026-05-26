@@ -5,7 +5,7 @@ import { CssBaseline, ThemeProvider, createTheme } from "@mui/material";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import Navbar from "./components/navbar/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import Jobs from "./pages/Jobs";
 import About from "./pages/AboutPage";
 import Contact from "./pages/ContactUs"
