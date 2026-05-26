@@ -140,7 +140,7 @@ export default function Navbar({ darkMode, onToggleTheme, isLoggedIn = true }) {
                     transition: "0.25s ease",
                   }}
                 >
-                  Post a Job
+                  Search a Job
                 </Button>
               </>
             )}
